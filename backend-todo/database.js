@@ -15,7 +15,10 @@ mongoose.connect("mongodb+srv://priteshmishra2125:HAfV8bgigMbakzQL@cluster0.gs66
 const todoSchema = new mongoose.Schema({
     title: String,
     description: String,
-    completed: Boolean
+    completed: {
+        type: Boolean,
+        default: false
+    }
 });
 
 const todo = mongoose.model("todos", todoSchema);
